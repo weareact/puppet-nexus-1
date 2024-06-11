@@ -117,6 +117,7 @@ class nexus (
     nexus_work_dir_manage => $nexus_work_dir_manage,
     nexus_work_recurse    => $nexus_work_recurse,
     md5sum                => $md5sum,
+    additional_download_tag => $additional_download_tag,
     notify                => Class['nexus::service']
   }
 
