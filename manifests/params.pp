@@ -43,4 +43,5 @@ class nexus::params {
   $download_provider             = 'wget::fetch'
   $manage_config                 = true
   $md5sum                        = undef
+  $additional_download_tag       = undef
 }
