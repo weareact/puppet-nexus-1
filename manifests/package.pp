@@ -44,6 +44,7 @@ class nexus::package (
   $download_folder = $::nexus::download_folder,
   $download_provider = $::nexus::download_provider,
   $md5sum = $::nexus::md5sum,
+  $additional_download_tag = $::nexus::additional_download_tag,
 ) {
 
   $nexus_home      = "${nexus_root}/${nexus_home_dir}"
@@ -56,7 +57,14 @@ class nexus::package (
     $bundle_type = ''
   }
 
-  $nexus_archive   = "nexus${bundle_type}-${full_version}-${nexus_type}.tar.gz"
+  if ($additional_download_tag) {
+    $_tag = $additional_download_tag
+  }
+  else {
+    $_tag = ''
+  }
+
+  $nexus_archive   = "nexus${bundle_type}-${full_version}${_tag}-${nexus_type}.tar.gz"
   $download_url    = "${download_site}/${nexus_archive}"
   $dl_file         = "${download_folder}/${nexus_archive}"
   $nexus_home_real = "${nexus_root}/nexus${bundle_type}-${full_version}"
