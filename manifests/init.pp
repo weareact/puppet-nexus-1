@@ -51,6 +51,7 @@ class nexus (
   $download_provider     = $nexus::params::download_provider,
   $manage_config         = $nexus::params::manage_config,
   $md5sum                = $nexus::params::md5sum,
+  $additional_download_tag = $nexus::params::additional_download_tag,
 ) inherits nexus::params {
   include stdlib
 
