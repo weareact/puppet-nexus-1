@@ -71,7 +71,7 @@ class nexus (
   }
 
   # Determine if Nexus Pro should be deployed instead of OSS
-  validate_bool($deploy_pro)
+
   if ($deploy_pro) {
     if ( $download_site != $nexus::params::download_site) {
       # Use any download site that was passed in
